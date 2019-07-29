@@ -1,0 +1,5 @@
+{
+    "connectUriDb": "root@tcp(localhost:3306)/chat?charset=utf8&parseTime=True&loc=Local",
+    "port": "8080",
+    "logName": "log"
+}

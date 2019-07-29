@@ -1,0 +1,134 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (5): 
+	- 
+	- bootstrap.min.css
+	- chat.html
+	- index.html
+	- style.css
+
+[GIN-debug] GET    /auth                     --> jwtchat/routs.Auth (3 handlers)
+[GIN-debug] POST   /checkLog                 --> jwtchat/routs.CheckLog (3 handlers)
+[GIN-debug] GET    /chat                     --> jwtchat/routs.Chat (3 handlers)
+[GIN-debug] GET    /ws                       --> main.main.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2019/07/29 - 16:23:37 | 200 |      4.9948ms |             ::1 | GET      /auth
+[GIN] 2019/07/29 - 16:23:37 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/07/29 - 16:23:37 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-07-29T16:23:41+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/jwtchat/routs/routs.go:39" took=0s
+time="2019-07-29T16:23:41+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('ngnl')" source="C:/Users/nGnL/go/src/jwtchat/routs/routs.go:43" took=1.0003ms
+[GIN] 2019/07/29 - 16:23:41 | 303 |      1.9989ms |             ::1 | POST     /checkLog
+[GIN] 2019/07/29 - 16:23:41 | 200 |      4.9959ms |             ::1 | GET      /chat
+time="2019-07-29T16:23:41+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/jwtchat/routs/routs.go:140" took=0s
+time="2019-07-29T16:23:48+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','iuihi','29.07.2019 16:23:32')" source="C:/Users/nGnL/go/src/jwtchat/routs/routs.go:185" took="999.8µs"
+2019/07/29 16:24:46 error: websocket: close 1006 (abnormal closure): unexpected EOF
+[GIN] 2019/07/29 - 16:24:46 | 200 |          1m4s |             ::1 | GET      /ws
+[GIN] 2019/07/29 - 16:25:02 | 200 |      3.9981ms |             ::1 | GET      /chat
+[GIN] 2019/07/29 - 16:25:02 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/07/29 - 16:25:02 | 404 |            0s |             ::1 | GET      /style.css
+[GIN] 2019/07/29 - 16:25:02 | 404 |            0s |             ::1 | GET      /favicon.ico
+routs/routs.go:140" took=1.001ms
+time="2019-07-25T19:25:55+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsada','25.07.2019 19:25:23')" source="C:/Users/nGnL/go/src/jwtchat/routs/routs.go:185" took="999.9µs"
+/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+      ::1 | GET      /style.css
+time="2019-07-19T21:33:09+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:33" took=0s
+time="2019-07-19T21:33:09+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('ngnl')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:37" took=0s
+[GIN] 2019/07/19 - 21:33:09 | 303 |      1.9979ms |             ::1 | POST     /checkLog
+time="2019-07-19T21:33:09+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took=0s
+[GIN] 2019/07/19 - 21:33:09 | 200 |      4.9972ms |             ::1 | GET      /chat
+time="2019-07-19T21:33:09+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:68" took=0s
+time="2019-07-19T21:33:09+05:00" level=debug msg="DELETE FROM `logs`  WHERE `logs`.`id` = '7'" source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took=1.0012ms
+time="2019-07-19T21:33:09+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:76" took=0s
+time="2019-07-19T21:33:20+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsadsdsadsa','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took="999.1µs"
+time="2019-07-19T21:33:23+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+time="2019-07-19T21:33:28+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsaddsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+time="2019-07-19T21:33:32+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsadsa','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+time="2019-07-19T21:33:40+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsadsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took="999.3µs"
+time="2019-07-19T21:33:42+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took="999.8µs"
+time="2019-07-19T21:33:43+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+time="2019-07-19T21:33:45+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took="999.4µs"
+time="2019-07-19T21:33:46+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+time="2019-07-19T21:33:50+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took="999.2µs"
+time="2019-07-19T21:33:51+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+time="2019-07-19T21:33:53+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+time="2019-07-19T21:33:58+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+time="2019-07-19T21:34:00+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took="999.9µs"
+time="2019-07-19T21:34:02+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
+[GIN] 2019/07/19 - 21:35:31 | 200 |         2m41s |             ::1 | GET      /ws
+time="2019-07-19T21:35:31+05:00" level=error msg="invalid connection" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50"
+time="2019-07-19T21:35:31+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took=1.0013ms
+[GIN] 2019/07/19 - 21:35:31 | 200 |      43.973ms |       127.0.0.1 | GET      /chat
+[GIN] 2019/07/19 - 21:35:32 | 404 |            0s |       127.0.0.1 | GET      /bootstrap.min.css
+[GIN] 2019/07/19 - 21:35:32 | 404 |            0s |       127.0.0.1 | GET      /style.css
+time="2019-07-19T21:35:33+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:33" took=301.9725ms
+time="2019-07-19T21:35:33+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('ngnl')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:37" took=0s
+[GIN] 2019/07/19 - 21:35:33 | 303 |    301.9725ms |       127.0.0.1 | POST     /checkLog
+time="2019-07-19T21:35:33+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took=1.0002ms
+[GIN] 2019/07/19 - 21:35:33 | 200 |      5.9951ms |       127.0.0.1 | GET      /chat
+time="2019-07-19T21:35:33+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:68" took=0s
+time="2019-07-19T21:35:33+05:00" level=debug msg="DELETE FROM `logs`  WHERE `logs`.`id` = '8'" source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took="998.8µs"
+time="2019-07-19T21:35:33+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:76" took=0s
+[GIN] 2019/07/19 - 21:36:25 | 200 |   52.0970985s |       127.0.0.1 | GET      /ws
+time="2019-07-19T21:36:25+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took=0s
+[GIN] 2019/07/19 - 21:36:25 | 200 |     48.9699ms |       127.0.0.1 | GET      /chat
+[GIN] 2019/07/19 - 21:36:25 | 404 |            0s |       127.0.0.1 | GET      /bootstrap.min.css
+[GIN] 2019/07/19 - 21:36:25 | 404 |            0s |       127.0.0.1 | GET      /style.css
+time="2019-07-19T21:36:29+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:33" took="999.3µs"
+time="2019-07-19T21:36:29+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('ngnl')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:37" took=0s
+[GIN] 2019/07/19 - 21:36:29 | 303 |       999.3µs |       127.0.0.1 | POST     /checkLog
+time="2019-07-19T21:36:29+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took="998.2µs"
+[GIN] 2019/07/19 - 21:36:29 | 200 |      4.9957ms |       127.0.0.1 | GET      /chat
+time="2019-07-19T21:36:29+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:68" took=0s
+time="2019-07-19T21:36:29+05:00" level=debug msg="DELETE FROM `logs`  WHERE `logs`.`id` = '9'" source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took="999.4µs"
+time="2019-07-19T21:36:29+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:76" took=0s
+[GIN] 2019/07/19 - 21:37:42 | 200 |         1m12s |       127.0.0.1 | GET      /ws
+time="2019-07-19T21:37:42+05:00" level=error msg="invalid connection" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50"
+time="2019-07-19T21:37:42+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took=1.0002ms
+[GIN] 2019/07/19 - 21:37:42 | 200 |     41.9747ms |       127.0.0.1 | GET      /chat
+[GIN] 2019/07/19 - 21:37:42 | 404 |            0s |       127.0.0.1 | GET      /bootstrap.min.css
+[GIN] 2019/07/19 - 21:37:42 | 404 |            0s |       127.0.0.1 | GET      /style.css
+time="2019-07-19T21:37:44+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:33" took=301.8524ms
+time="2019-07-19T21:37:44+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('ngnl')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:37" took=0s
+[GIN] 2019/07/19 - 21:37:44 | 303 |    301.8524ms |       127.0.0.1 | POST     /checkLog
+time="2019-07-19T21:37:44+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took="999.4µs"
+[GIN] 2019/07/19 - 21:37:44 | 200 |      5.9972ms |       127.0.0.1 | GET      /chat
+time="2019-07-19T21:37:44+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:68" took=0s
+time="2019-07-19T21:37:44+05:00" level=debug msg="DELETE FROM `logs`  WHERE `logs`.`id` = '10'" source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took="999.4µs"
+time="2019-07-19T21:37:44+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:76" took=0s
+[GIN] 2019/07/19 - 21:38:09 | 200 |          5m0s |             ::1 | GET      /ws
+[GIN] 2019/07/19 - 21:38:17 | 200 |   33.0489985s |       127.0.0.1 | GET      /ws
+2019/07/19 - 21:14:23 | 200 |    4.4432906s |             ::1 | GET      /ws
+[GIN] 2019/07/19 - 21:14:23 | 200 |     47.9704ms |             ::1 | GET      /chat
+time="2019-07-19T21:14:23+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:61" took=0s
+time="2019-07-19T21:14:23+05:00" level=debug msg="DELETE FROM `logs`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:62" took=0s
+time="2019-07-19T21:14:23+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took=0s
+[GIN] 2019/07/19 - 21:14:44 | 200 |   21.2989454s |             ::1 | GET      /ws
+[GIN] 2019/07/19 - 21:14:45 | 200 |      6.9956ms |             ::1 | GET      /chat
+time="2019-07-19T21:14:45+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:61" took=0s
+time="2019-07-19T21:14:45+05:00" level=debug msg="DELETE FROM `logs`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:62" took=0s
+time="2019-07-19T21:14:45+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took=0s
+[GIN] 2019/07/19 - 21:14:57 | 200 |   12.6564911s |             ::1 | GET      /ws
+[GIN] 2019/07/19 - 21:14:57 | 200 |      55.964ms |             ::1 | GET      /chat
+time="2019-07-19T21:14:57+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:61" took=0s
+time="2019-07-19T21:14:57+05:00" level=debug msg="DELETE FROM `logs`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:62" took=0s
+time="2019-07-19T21:14:57+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took=0s
+[GIN] 2019/07/19 - 21:15:14 | 200 |   16.5992144s |             ::1 | GET      /ws
+[GIN] 2019/07/19 - 21:15:14 | 200 |     52.9666ms |             ::1 | GET      /chat
+time="2019-07-19T21:15:14+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:61" took=0s
+time="2019-07-19T21:15:14+05:00" level=debug msg="DELETE FROM `logs`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:62" took=0s
+time="2019-07-19T21:15:14+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took=0s
+[GIN] 2019/07/19 - 21:15:18 | 200 |    3.9134568s |             ::1 | GET      /ws
+[GIN] 2019/07/19 - 21:15:18 | 200 |      4.9984ms |             ::1 | GET      /chat
+time="2019-07-19T21:15:18+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:61" took=0s
+time="2019-07-19T21:15:18+05:00" level=debug msg="DELETE FROM `logs`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:62" took=0s
+time="2019-07-19T21:15:18+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took=0s
+[GIN] 2019/07/19 - 21:15:21 | 200 |    3.2428908s |             ::1 | GET      /ws
+[GIN] 2019/07/19 - 21:15:21 | 200 |     47.9676ms |             ::1 | GET      /chat
+time="2019-07-19T21:15:21+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:61" took=0s
+time="2019-07-19T21:15:21+05:00" level=debug msg="DELETE FROM `logs`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:62" took=0s
+time="2019-07-19T21:15:21+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took=1.0015ms
+time="2019-07-19T21:15:26+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('','dsadsadsa','19.07.2019 21:11:31')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:114" took=0s
