@@ -4,127 +4,140 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] Loaded HTML Templates (5): 
+[GIN-debug] Loaded HTML Templates (6): 
 	- 
 	- bootstrap.min.css
 	- chat.html
+	- index.gohtml
 	- index.html
 	- style.css
 
 [GIN-debug] GET    /auth                     --> chat/routs.Auth (3 handlers)
+[GIN-debug] GET    /                         --> chat/routs.Index (3 handlers)
+[GIN-debug] GET    /logout                   --> chat/routs.Logout (3 handlers)
 [GIN-debug] POST   /checkLog                 --> chat/routs.CheckLog (3 handlers)
-[GIN-debug] GET    /chat                     --> chat/routs.Chat (3 handlers)
 [GIN-debug] GET    /ws                       --> main.main.func1 (3 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-time="2019-07-29T15:54:44+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/chat/routs/routs.go:79" took=0s
-[GIN] 2019/07/29 - 15:54:44 | 200 |       5.996ms |             ::1 | GET      /chat
-[GIN] 2019/07/29 - 15:54:44 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
-[GIN] 2019/07/29 - 15:54:44 | 404 |            0s |             ::1 | GET      /style.css
-[GIN] 2019/07/29 - 15:54:44 | 404 |            0s |             ::1 | GET      /favicon.ico
-time="2019-07-29T15:54:49+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:52" took=0s
-time="2019-07-29T15:54:49+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('ngnl')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:57" took="999.5µs"
-[GIN] 2019/07/29 - 15:54:49 | 303 |       999.5µs |             ::1 | POST     /checkLog
-time="2019-07-29T15:54:49+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/chat/routs/routs.go:79" took=0s
-[GIN] 2019/07/29 - 15:54:49 | 200 |     22.9859ms |             ::1 | GET      /chat
-time="2019-07-29T15:54:49+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:125" took=0s
-2019/07/29 15:55:13 error: websocket: close 1001 (going away)
-[GIN] 2019/07/29 - 15:55:13 | 200 |   23.6942444s |             ::1 | GET      /ws
-[GIN] 2019/07/29 - 15:55:13 | 404 |            0s |             ::1 | GET      /
-[GIN] 2019/07/29 - 15:55:35 | 200 |      2.9969ms |             ::1 | GET      /auth
-[GIN] 2019/07/29 - 15:55:35 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
-[GIN] 2019/07/29 - 15:55:35 | 404 |            0s |             ::1 | GET      /style.css
-time="2019-07-29T15:55:45+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:52" took=0s
-time="2019-07-29T15:55:45+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('desu')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:57" took=0s
-[GIN] 2019/07/29 - 15:55:45 | 303 |       998.3µs |             ::1 | POST     /checkLog
-time="2019-07-29T15:55:45+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/chat/routs/routs.go:79" took=0s
-[GIN] 2019/07/29 - 15:55:45 | 200 |      5.9996ms |             ::1 | GET      /chat
-time="2019-07-29T15:55:45+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:125" took=0s
-14+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/chat/routs/routs.go:79" took=0s
-[GIN] 2019/07/29 - 15:53:14 | 200 |      5.0017ms |             ::1 | GET      /chat
-time="2019-07-29T15:53:14+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:124" took="997.6µs"
-2019/07/29 15:53:22 error: websocket: close 1001 (going away)
-[GIN] 2019/07/29 - 15:53:22 | 200 |         1m10s |             ::1 | GET      /ws
-2019/07/29 15:53:26 error: websocket: close 1001 (going away)
-[GIN] 2019/07/29 - 15:53:26 | 200 |   11.1939716s |             ::1 | GET      /ws
-[GIN] 2019/07/29 - 15:53:32 | 404 |            0s |             ::1 | GET      /
-2019/07/29 15:53:53 error: websocket: close 1001 (going away)
-[GIN] 2019/07/29 - 15:53:53 | 200 |         1m28s |             ::1 | GET      /ws
-time="2019-07-29T15:53:58+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/chat/routs/routs.go:79" took="999.9µs"
-[GIN] 2019/07/29 - 15:53:58 | 200 |      5.9965ms |             ::1 | GET      /chat
-time="2019-07-29T15:53:58+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:124" took=0s
-2019/07/29 15:54:00 error: websocket: close 1006 (abnormal closure): unexpected EOF
-[GIN] 2019/07/29 - 15:54:00 | 200 |    1.7529664s |             ::1 | GET      /ws
-time="2019-07-29T15:54:08+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/chat/routs/routs.go:79" took=1.0015ms
-[GIN] 2019/07/29 - 15:54:08 | 200 |      8.9936ms |             ::1 | GET      /chat
-[GIN] 2019/07/29 - 15:54:08 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
-[GIN] 2019/07/29 - 15:54:08 | 404 |            0s |             ::1 | GET      /style.css
-[GIN] 2019/07/29 - 15:54:08 | 404 |            0s |             ::1 | GET      /favicon.ico
-time="2019-07-29T15:54:08+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:124" took=0s
-/bootstrap.min.css
-[GIN] 2019/07/24 - 23:40:36 | 404 |            0s |             ::1 | GET      /style.css
-time="2019-07-24T23:40:41+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:52" took=0s
-time="2019-07-24T23:40:41+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('desu')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:56" took="999.6µs"
-[GIN] 2019/07/24 - 23:40:41 | 303 |       999.6µs |             ::1 | POST     /checkLog
-time="2019-07-24T23:40:41+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/chat/routs/routs.go:77" took=0s
-[GIN] 2019/07/24 - 23:40:41 | 200 |      4.9963ms |             ::1 | GET      /chat
-time="2019-07-24T23:40:41+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/chat/routs/routs.go:108" took=0s
-time="2019-07-24T23:40:41+05:00" level=debug msg="DELETE FROM `logs`  WHERE `logs`.`id` = '5'" source="C:/Users/nGnL/go/src/chat/routs/routs.go:109" took=1.0008ms
-time="2019-07-24T23:40:41+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:122" took="998.9µs"
-time="2019-07-24T23:40:44+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('desu','dsad','24.07.2019 23:40:00')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:167" took="999.6µs"
-source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took="999.9µs"
-time="2019-07-19T21:34:02+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','19.07.2019 21:32:43')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:121" took=0s
-[GIN] 2019/07/19 - 21:35:31 | 200 |         2m41s |             ::1 | GET      /ws
-time="2019-07-19T21:35:31+05:00" level=error msg="invalid connection" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50"
-time="2019-07-19T21:35:31+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took=1.0013ms
-[GIN] 2019/07/19 - 21:35:31 | 200 |      43.973ms |       127.0.0.1 | GET      /chat
-[GIN] 2019/07/19 - 21:35:32 | 404 |            0s |       127.0.0.1 | GET      /bootstrap.min.css
-[GIN] 2019/07/19 - 21:35:32 | 404 |            0s |       127.0.0.1 | GET      /style.css
-time="2019-07-19T21:35:33+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:33" took=301.9725ms
-time="2019-07-19T21:35:33+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('ngnl')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:37" took=0s
-[GIN] 2019/07/19 - 21:35:33 | 303 |    301.9725ms |       127.0.0.1 | POST     /checkLog
-time="2019-07-19T21:35:33+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took=1.0002ms
-[GIN] 2019/07/19 - 21:35:33 | 200 |      5.9951ms |       127.0.0.1 | GET      /chat
-time="2019-07-19T21:35:33+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:68" took=0s
-time="2019-07-19T21:35:33+05:00" level=debug msg="DELETE FROM `logs`  WHERE `logs`.`id` = '8'" source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took="998.8µs"
-time="2019-07-19T21:35:33+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:76" took=0s
-[GIN] 2019/07/19 - 21:36:25 | 200 |   52.0970985s |       127.0.0.1 | GET      /ws
-time="2019-07-19T21:36:25+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took=0s
-[GIN] 2019/07/19 - 21:36:25 | 200 |     48.9699ms |       127.0.0.1 | GET      /chat
-[GIN] 2019/07/19 - 21:36:25 | 404 |            0s |       127.0.0.1 | GET      /bootstrap.min.css
-[GIN] 2019/07/19 - 21:36:25 | 404 |            0s |       127.0.0.1 | GET      /style.css
-time="2019-07-19T21:36:29+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:33" took="999.3µs"
-time="2019-07-19T21:36:29+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('ngnl')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:37" took=0s
-[GIN] 2019/07/19 - 21:36:29 | 303 |       999.3µs |       127.0.0.1 | POST     /checkLog
-time="2019-07-19T21:36:29+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took="998.2µs"
-[GIN] 2019/07/19 - 21:36:29 | 200 |      4.9957ms |       127.0.0.1 | GET      /chat
-time="2019-07-19T21:36:29+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:68" took=0s
-time="2019-07-19T21:36:29+05:00" level=debug msg="DELETE FROM `logs`  WHERE `logs`.`id` = '9'" source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took="999.4µs"
-time="2019-07-19T21:36:29+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:76" took=0s
-[GIN] 2019/07/19 - 21:37:42 | 200 |         1m12s |       127.0.0.1 | GET      /ws
-time="2019-07-19T21:37:42+05:00" level=error msg="invalid connection" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50"
-time="2019-07-19T21:37:42+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took=1.0002ms
-[GIN] 2019/07/19 - 21:37:42 | 200 |     41.9747ms |       127.0.0.1 | GET      /chat
-[GIN] 2019/07/19 - 21:37:42 | 404 |            0s |       127.0.0.1 | GET      /bootstrap.min.css
-[GIN] 2019/07/19 - 21:37:42 | 404 |            0s |       127.0.0.1 | GET      /style.css
-time="2019-07-19T21:37:44+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:33" took=301.8524ms
-time="2019-07-19T21:37:44+05:00" level=debug msg="INSERT  INTO `logs` (`user`) VALUES ('ngnl')" source="C:/Users/nGnL/go/src/kr/routs/routs.go:37" took=0s
-[GIN] 2019/07/19 - 21:37:44 | 303 |    301.8524ms |       127.0.0.1 | POST     /checkLog
-time="2019-07-19T21:37:44+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:50" took="999.4µs"
-[GIN] 2019/07/19 - 21:37:44 | 200 |      5.9972ms |       127.0.0.1 | GET      /chat
-time="2019-07-19T21:37:44+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:68" took=0s
-time="2019-07-19T21:37:44+05:00" level=debug msg="DELETE FROM `logs`  WHERE `logs`.`id` = '10'" source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took="999.4µs"
-time="2019-07-19T21:37:44+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:76" took=0s
-[GIN] 2019/07/19 - 21:38:09 | 200 |          5m0s |             ::1 | GET      /ws
-[GIN] 2019/07/19 - 21:38:17 | 200 |   33.0489985s |       127.0.0.1 | GET      /ws
-2019/07/19 - 21:14:23 | 200 |    4.4432906s |             ::1 | GET      /ws
-[GIN] 2019/07/19 - 21:14:23 | 200 |     47.9704ms |             ::1 | GET      /chat
-time="2019-07-19T21:14:23+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:61" took=0s
-time="2019-07-19T21:14:23+05:00" level=debug msg="DELETE FROM `logs`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:62" took=0s
-time="2019-07-19T21:14:23+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took=0s
-[GIN] 2019/07/19 - 21:14:44 | 200 |   21.2989454s |             ::1 | GET      /ws
-[GIN] 2019/07/19 - 21:14:45 | 200 |      6.9956ms |             ::1 | GET      /chat
-time="2019-07-19T21:14:45+05:00" level=debug msg="SELECT * FROM `logs`   ORDER BY `logs`.`id` ASC LIMIT 1" source="C:/Users/nGnL/go/src/kr/routs/routs.go:61" took=0s
-time="2019-07-19T21:14:45+05:00" level=debug msg="DELETE FROM `logs`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:62" took=0s
+time="2019-08-01T22:13:09+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=1ms
+[GIN] 2019/08/01 - 22:13:09 | 200 |      6.9951ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:13:09 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:13:09 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:13:09+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=0s
+2019/08/01 22:13:23 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:13:23 | 200 |   13.8931954s |             ::1 | GET      /ws
+time="2019-08-01T22:13:23+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:13:23 | 200 |      5.9944ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:13:23 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:13:23 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:13:23+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took="999.2µs"
+2019/08/01 22:13:24 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:13:24 | 200 |    864.9796ms |             ::1 | GET      /ws
+time="2019-08-01T22:13:24+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took="998.8µs"
+[GIN] 2019/08/01 - 22:13:24 | 200 |       5.997ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:13:24 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:13:24 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:13:24+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=0s
+2019/08/01 22:13:25 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:13:25 | 200 |    1.2240233s |             ::1 | GET      /ws
+[GIN] 2019/08/01 - 22:13:25 | 302 |       999.5µs |             ::1 | GET      /logout
+time="2019-08-01T22:13:25+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:13:25 | 200 |      4.9987ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:13:25 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:13:25 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:13:25+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=0s
+2019/08/01 22:13:27 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:13:27 | 200 |     1.203522s |             ::1 | GET      /ws
+time="2019-08-01T22:13:27+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:69" took=1.0017ms
+[GIN] 2019/08/01 - 22:13:27 | 303 |      1.0017ms |             ::1 | POST     /checkLog
+time="2019-08-01T22:13:27+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:13:27 | 200 |      4.9954ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:13:27 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:13:27 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:13:27+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=1.0006ms
+2019/08/01 22:13:30 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:13:30 | 200 |    2.9637483s |             ::1 | GET      /ws
+[GIN] 2019/08/01 - 22:13:30 | 302 |            0s |             ::1 | GET      /logout
+time="2019-08-01T22:13:30+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:13:30 | 200 |      4.9921ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:13:30 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:13:30 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:13:30+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=0s
+2019/08/01 22:13:31 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:13:31 | 200 |    1.1858249s |             ::1 | GET      /ws
+time="2019-08-01T22:13:31+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:69" took=0s
+[GIN] 2019/08/01 - 22:13:31 | 303 |       1.002ms |             ::1 | POST     /checkLog
+time="2019-08-01T22:13:31+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took="998.5µs"
+[GIN] 2019/08/01 - 22:13:31 | 200 |      5.9963ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:13:31 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:13:31 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:13:31+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took="998.7µs"
+time="2019-08-01T22:13:37+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsada','01.08.2019 22:13:06')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:229" took=0s
+time="2019-08-01T22:13:42+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsadas','01.08.2019 22:13:06')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:229" took=0s
+time="2019-08-01T22:14:05+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','fsdfsd','01.08.2019 22:13:06')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:229" took=0s
+time="2019-08-01T22:14:08+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsadasdas','01.08.2019 22:13:06')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:229" took=0s
+2019/08/01 22:14:28 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:14:28 | 200 |   56.8500747s |             ::1 | GET      /ws
+time="2019-08-01T22:14:28+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:14:28 | 200 |     44.9735ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:14:28 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:14:28 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:14:28+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=0s
+time="2019-08-01T22:14:32+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsada','01.08.2019 22:13:06')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:229" took="997.4µs"
+2019/08/01 22:14:34 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:14:34 | 200 |    6.3447115s |             ::1 | GET      /ws
+time="2019-08-01T22:14:34+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:14:34 | 200 |      4.9943ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:14:34 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:14:34 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:14:34+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=0s
+2019/08/01 22:14:36 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:14:36 | 200 |    1.3456983s |             ::1 | GET      /ws
+time="2019-08-01T22:14:36+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:14:36 | 200 |      5.9966ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:14:36 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:14:36 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:14:36+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took="999.8µs"
+2019/08/01 22:14:38 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:14:38 | 200 |    1.8312984s |             ::1 | GET      /ws
+time="2019-08-01T22:14:38+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:14:38 | 200 |      4.9959ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:14:38 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:14:38 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:14:38+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=0s
+2019/08/01 22:15:15 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:15:15 | 200 |   37.3514438s |             ::1 | GET      /ws
+[GIN] 2019/08/01 - 22:15:15 | 302 |            0s |             ::1 | GET      /logout
+time="2019-08-01T22:15:15+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=1.0035ms
+[GIN] 2019/08/01 - 22:15:15 | 200 |      5.9983ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:15:15 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:15:15 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:15:15+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=0s
+2019/08/01 22:15:16 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:15:16 | 200 |    956.5022ms |             ::1 | GET      /ws
+time="2019-08-01T22:15:16+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:69" took=0s
+[GIN] 2019/08/01 - 22:15:16 | 303 |      1.0006ms |             ::1 | POST     /checkLog
+time="2019-08-01T22:15:16+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:15:16 | 200 |       5.997ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:15:16 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:15:16 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:15:16+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took="999.6µs"
+time="2019-08-01T22:15:25+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=1.0013ms
+[GIN] 2019/08/01 - 22:15:25 | 200 |      5.9964ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:15:25 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:15:25 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:15:25+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took="999.5µs"
+[GIN] 2019/08/01 - 22:15:25 | 404 |            0s |             ::1 | GET      /favicon.ico
+2019/08/01 22:15:30 error: websocket: close 1001 (going away)
+[GIN] 2019/08/01 - 22:15:30 | 200 |    4.4754558s |             ::1 | GET      /ws
+time="2019-08-01T22:15:30+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:69" took=0s
+[GIN] 2019/08/01 - 22:15:30 | 303 |       999.6µs |             ::1 | POST     /checkLog
+time="2019-08-01T22:15:30+05:00" level=debug msg="SELECT * FROM `account`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:48" took=0s
+[GIN] 2019/08/01 - 22:15:30 | 200 |      4.9972ms |             ::1 | GET      /
+[GIN] 2019/08/01 - 22:15:30 | 404 |            0s |             ::1 | GET      /bootstrap.min.css
+[GIN] 2019/08/01 - 22:15:30 | 404 |            0s |             ::1 | GET      /style.css
+time="2019-08-01T22:15:30+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/chat/routs/routs.go:166" took=0s
+time="2019-08-01T22:15:37+05:00" level=debug msg="INSERT  INTO `history` (`user`,`message`,`date`) VALUES ('ngnl','dsad','01.08.2019 22:13:06')" source="C:/Users/nGnL/go/src/chat/routs/routs.go:229" took="999.9µs"
+Users/nGnL/go/src/kr/routs/routs.go:62" took=0s
 time="2019-07-19T21:14:45+05:00" level=debug msg="SELECT * FROM `history`  " source="C:/Users/nGnL/go/src/kr/routs/routs.go:69" took=0s
 [GIN] 2019/07/19 - 21:14:57 | 200 |   12.6564911s |             ::1 | GET      /ws
 [GIN] 2019/07/19 - 21:14:57 | 200 |      55.964ms |             ::1 | GET      /chat

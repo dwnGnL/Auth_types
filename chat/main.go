@@ -30,8 +30,10 @@ func main()  {
 	r:=gin.Default()
 	r.LoadHTMLGlob("templates/*")
 	r.GET("/auth", routs.Auth)
+	r.GET("/", routs.Index)
+	r.GET("/logout", routs.Logout)
 	r.POST("/checkLog", routs.CheckLog)
-	r.GET("/chat",routs.Chat)
+	// r.GET("/chat",routs.Chat)
 	r.GET("/ws", func(c *gin.Context) {
 		routs.Wshandler(c.Writer, c.Request)
 	})

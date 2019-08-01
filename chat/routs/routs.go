@@ -23,6 +23,10 @@ type sesKey int
 const (
     sesKeyLogin sesKey = iota
 )
+type User struct {
+	Username      string
+	Authenticated bool
+}
 
 
 var onlineUsers = make(map[*websocket.Conn]string)
@@ -37,15 +41,28 @@ func Auth(c *gin.Context)  {
 	c.HTML(http.StatusOK,"index.html",gin.H{"title":"authorization"})
 }
 var login string
+
+func CheckCookie(user User) User{
+	db := db.GetDB()
+	var account []models.Account
+	db.Find(&account)
+	for _,acc:=range account{
+		if user.Username==acc.Login{
+			return user
+		}
+	}
+	return User{Authenticated: false}
+}
+
 func CheckLog(c *gin.Context){
-	gob.Register(sesKey(0)) // уточнить
+	// gob.Register(sesKey(0)) // уточнить
 	ses, err := cookieStore.Get(c.Request, cookieName)
 	if err != nil {
 		http.Error(c.Writer, err.Error(), http.StatusBadRequest)
 		return
 	}
 	var account []models.Account
-	var check bool
+	// var check bool
 	db := db.GetDB()
 	login=c.PostForm("login")
 	pass:=c.PostForm("password")
@@ -53,54 +70,78 @@ func CheckLog(c *gin.Context){
 	fmt.Println(sesKeyLogin)
 	for _,acc:=range account{
 		if login==acc.Login && pass==acc.Pass{
-			logs := models.Logs{User:acc.Login}
-			db.Create(&logs)
-			ses.Values[sesKeyLogin] = login
+			// logs := models.Logs{User:acc.Login}
+			// db.Create(&logs)
+			user := &User{
+				Username:      login,
+				Authenticated: true,
+			}
+			ses.Values[sesKeyLogin] = user
 			ses.Options.MaxAge=3500
 			err = cookieStore.Save(c.Request, c.Writer, ses)
 			if err != nil {
 				http.Error(c.Writer, err.Error(), http.StatusBadRequest)
 				return
 			}
-			c.Redirect(303,"http://localhost:8080/chat")
-			check=true
+			// c.Redirect(303,"http://localhost:8080/chat")
+			// check=true
 		}
 	}
-	if !check{
-		c.Redirect(303,"http://localhost:8080/auth")
-	}
-}
-
-func Chat(c *gin.Context){
-	gob.Register(sesKey(0))
-	db := db.GetDB()
-	var logs models.Logs
-	
-	db.First(&logs)
-	ses, err := cookieStore.Get(c.Request, cookieName)
-        if err != nil {
-            http.Error(c.Writer, err.Error(), http.StatusBadRequest)
-            return
-        }
-
-        _, ok := ses.Values[sesKeyLogin].(string)
-        if !ok {
-			c.HTML(http.StatusOK,"index.html",gin.H{"title":"authorization"})
-			return
-        }
-
-        c.HTML(http.StatusOK,"chat.html",gin.H{"title":"All Ok"})
-	// if logs.User==""{
-	// 	c.HTML(http.StatusOK,"index.html",gin.H{"title":"authorization"})
-	// }else{
-	// 	c.HTML(http.StatusOK,"chat.html",gin.H{"title":"dsdsa"})
+	// if !check{
+		c.Redirect(303,"http://localhost:8080/")
 	// }
-	
-	
 }
+
+func init(){
+	gob.Register(sesKey(0))
+	gob.Register(User{})
+}
+
+func Index(c *gin.Context){
+	ses, err := cookieStore.Get(c.Request, cookieName)
+	if err != nil {
+		http.Error(c.Writer, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	user, _ := ses.Values[sesKeyLogin].(User)
+
+	user=CheckCookie(user)
+	c.HTML(http.StatusOK,"index.gohtml",user)
+
+}
+
+
+// func Chat(c *gin.Context){
+// 	// gob.Register(sesKey(0))
+// 	db := db.GetDB()
+// 	var logs models.Logs
+	
+// 	db.First(&logs)
+// 	ses, err := cookieStore.Get(c.Request, cookieName)
+//         if err != nil {
+//             http.Error(c.Writer, err.Error(), http.StatusBadRequest)
+//             return
+//         }
+
+//         _, ok := ses.Values[sesKeyLogin].(string)
+//         if !ok {
+// 			c.HTML(http.StatusOK,"index.html",gin.H{"title":"authorization"})
+// 			return
+//         }
+
+//         c.HTML(http.StatusOK,"chat.html",gin.H{"title":"All Ok"})
+// 	// if logs.User==""{
+// 	// 	c.HTML(http.StatusOK,"index.html",gin.H{"title":"authorization"})
+// 	// }else{
+// 	// 	c.HTML(http.StatusOK,"chat.html",gin.H{"title":"dsdsa"})
+// 	// }
+	
+	
+// }
 
 func Wshandler(w http.ResponseWriter, r *http.Request) {
-	gob.Register(sesKey(0))
+	// gob.Register(sesKey(0))
 	conn, err := wsupgrader.Upgrade(w, r, nil)
 	database:=db.GetDB()
 	if err != nil {
@@ -116,10 +157,10 @@ func Wshandler(w http.ResponseWriter, r *http.Request) {
             http.Error(w, err.Error(), http.StatusBadRequest)
             return
         }
-	login, _ := ses.Values[sesKeyLogin].(string)
+	login, _ := ses.Values[sesKeyLogin].(User)
 	var history []models.History
 	// onlineUsers[conn] = logs.User
-	onlineUsers[conn] = login
+	onlineUsers[conn] = login.Username
 	users[conn] = true
 
 	database.Find(&history)
@@ -153,6 +194,24 @@ func Wshandler(w http.ResponseWriter, r *http.Request) {
 			broadcast <- msg
 		}
 	}
+}
+
+func Logout(c *gin.Context){
+	session, err := cookieStore.Get(c.Request, cookieName)
+	if err != nil {
+		http.Error(c.Writer, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	session.Values[sesKeyLogin] = User{}
+	session.Options.MaxAge = -1
+
+	err = session.Save(c.Request, c.Writer)
+	if err != nil {
+		http.Error(c.Writer, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	http.Redirect(c.Writer, c.Request, "/", http.StatusFound)
 }
 
 func HandleMessages() {
